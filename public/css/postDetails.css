@@ -1,0 +1,136 @@
+/* Basic Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Theme Colors and Fonts - Updated to Vibrant Pink */
+:root {
+  --primary-color: #ff007f; /* Vibrant Pink */
+  --accent-color: #ffc0cb; /* Soft Pink */
+  --text-color: #333; /* Darker Text for Contrast */
+  --background-color: #fdfbff; /* Very Light Background */
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --border-radius: 10px; /* Smoother edges for a modern look */
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle, modern shadow */
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  padding: 20px;
+}
+
+.container {
+  max-width: 960px;
+  margin: 20px auto;
+  background: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+}
+
+/* Headings Updated for Modern Feel */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  font-weight: 600; /* Slightly less bold for a cleaner look */
+}
+
+/* Links Styled with Pink Accents */
+a {
+  color: var(--primary-color);
+  text-decoration: none; /* No underlines for a cleaner look */
+}
+
+a:hover {
+  color: darken(var(--primary-color), 10%);
+}
+
+/* Button and Icon Styling for a Cohesive, Modern Look */
+.btn {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn:hover {
+  background-color: darken(var(--primary-color), 10%);
+  transform: translateY(-2px); /* Slight raise effect on hover */
+}
+
+/* Modernizing the Comment Form */
+.comment-form textarea,
+.comment-form input[type='text'] {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.2s;
+}
+
+.comment-form textarea:focus,
+.comment-form input[type='text']:focus {
+  border-color: var(--primary-color);
+  outline: none; /* Focus without the harsh outlines */
+}
+
+.comment-form button {
+  width: auto;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+/* Styling Comments for a More Modern Appearance */
+.comments {
+  background: var(--background-color);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.comment {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.comment-author-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px; /* Space between image and comment text */
+}
+
+/* Responsive Design for Flexibility */
+@media (min-width: 768px) {
+  .container-flex {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .main-content {
+    flex: 3;
+  }
+  
+  .sidebar {
+    flex: 1;
+  }
+}

@@ -15,7 +15,7 @@ const postSchema = new mongoose.Schema({
     },
     image: {
         type: String,
-        // required: true
+        required: true
     },
     user:{
         type: mongoose.Schema.ObjectId,
@@ -25,8 +25,9 @@ const postSchema = new mongoose.Schema({
     comments: [{
         type: mongoose.Schema.ObjectId,
         ref: "Comment"
-    }]
-})
+    }],
+    
+}, { timestamps: true })
 
 const Post = new mongoose.model("Post", postSchema)
 module.exports = Post

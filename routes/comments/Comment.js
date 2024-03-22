@@ -1,7 +1,7 @@
 const express = require("express")
 const commentRoute = express.Router()
-const {createCommentCtrl, deleteCommentCtrl, commentUpdateCtrl} = require("../../controllers/comments/Comment")
-
+const {createCommentCtrl, deleteCommentCtrl, commentUpdateCtrl, commentDetailCtrl} = require("../../controllers/comments/Comment")
+const Comment = require("C:\\Users\\ADMIN\\OneDrive\\Desktop\\FULLSTACK B\\models\\comment\\Comment.js")
 //POST/api/v1/comments
 commentRoute.post("/:id", createCommentCtrl, async (req, res) => {
     try {
@@ -15,7 +15,7 @@ commentRoute.post("/:id", createCommentCtrl, async (req, res) => {
     });
 
     //GET/api/v1/comments/:id
-commentRoute.get("/:id", async (req, res) => {
+commentRoute.get("/:id", commentDetailCtrl,async (req, res) => {
     try {
         res.json({
         status: "success",
