@@ -30,7 +30,7 @@ app.use(
         secret: process.env.SECRET_KEY,
         resave: false,
         saveUninitialized: true,
-        store: new MongoStore({
+        store: new MongoStore({ //store session in the database
             mongoUrl: process.env.URL,
             ttl: 24*60*60 //expires in 1 day
         })
